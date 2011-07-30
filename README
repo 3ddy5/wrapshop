@@ -1,0 +1,12 @@
+JSF Projekt für Verteilte Anwendungen bei Prof. Dr. Dietmar Abts
+
+Projekt beinhaltet:
++Derby Datanbank Zugriff
++Containergestutze Authentifizierung
++AJAX
++Validierung
++
+
+
+Tabellen und Stammdaten mit ..db/bild.xml anlegen.
+Für Authentifizierung in Glassfish einen Realm anlegen.
