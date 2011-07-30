@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Wrap anlegen / ändern</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+</h:head>
+<h:body>
+<h:form>
+	<h:panelGrid columns="2" headerClass="header">
+		<f:facet name="header">Wrap anlegen / ändern</f:facet>
+		<h:outputLabel value="Zutat1:" for="zutat1" />
+		<h:panelGroup>
+			<h:inputText id="zutat1"
+				value="#{wrapHandler.aktuellerWrap.zutat1}" 
+				validatorMessage="Bitte eingeben">
+				<f:validateRegex pattern="\S.+" />
+			</h:inputText>
+			<h:message for="zutat1" styleClass="message" />
+		</h:panelGroup>
+		<h:outputLabel value="Zutat2:" for="zutat2" />
+		<h:panelGroup>
+			<h:inputText id="zutat2"
+				value="#{wrapHandler.aktuellerWrap.zutat2}" 
+				validatorMessage="Bitte eingeben">
+				<f:validateRegex pattern="\S.+" />
+			</h:inputText>
+			<h:message for="zutat2" styleClass="message" />
+		</h:panelGroup>
+		<h:outputLabel value="Zutat3:" for="zutat3" />
+		<h:panelGroup>
+			<h:inputText id="zutat3"
+				value="#{wrapHandler.aktuellerWrap.zutat3}" 
+				validatorMessage="Bitte eingeben">
+				<f:validateRegex pattern="\S.+" />
+			</h:inputText>
+			<h:message for="zutat3" styleClass="message" />
+		</h:panelGroup>
+		<h:outputLabel value="Zutat4:" for="zutat4" />
+		<h:panelGroup>
+			<h:inputText id="zutat4"
+				value="#{wrapHandler.aktuellerWrap.zutat4}" 
+				validatorMessage="Bitte eingeben">
+				<f:validateRegex pattern="\S.+" />
+			</h:inputText>
+			<h:message for="zutat4" styleClass="message" />
+		</h:panelGroup>
+	</h:panelGrid>
+	<h:commandButton action="#{wrapHandler.speichern}" 
+		value="Speichern" style="width: 80px; margin: 10px 2px 2px 2px;" />
+	<h:commandButton action="#{wrapHandler.back}" 
+		value="Zurück" immediate="true" style="width: 80px; margin: 10px 2px 2px 2px;" />
+</h:form>
+</h:body>
+</html>

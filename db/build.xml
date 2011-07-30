@@ -1,0 +1,39 @@
+<project name="wrapshop" default="all" basedir=".">
+	<property name="DRIVER" value="./derbyclient.jar" />
+	<property name="SQLCLIENT" value="./SQLClient" />
+
+	<property name="USER" value="APP" />
+	<property name="PASSWORD" value="APP" />
+
+	<target name="sqlclient">
+		<exec executable="start" spawn="true" vmlauncher="false">
+			<arg line="/D ${SQLCLIENT} sqlclient-v2.3.jar" />
+		</exec>
+	</target>
+
+	<target name="create">
+		<sql driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost/sun-appserv-samples" userid="${USER}" password="${PASSWORD}" classpath="${DRIVER}" src="create.sql" />
+	</target>
+	<target name="stammkunden anlegen">
+		<sql driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost/sun-appserv-samples" userid="${USER}" password="${PASSWORD}" classpath="${DRIVER}" src="stammkunden.sql" />
+	</target>
+	<target name="wraps anlegen">
+		<sql driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost/sun-appserv-samples" userid="${USER}" password="${PASSWORD}" classpath="${DRIVER}" src="wraps.sql" />
+	</target>
+	<target name="zutaten anlegen">
+		<sql driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost/sun-appserv-samples" userid="${USER}" password="${PASSWORD}" classpath="${DRIVER}" src="zutaten.sql" />
+	</target>
+	<target name="clean">
+		<sql driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost/sun-appserv-samples" userid="${USER}" password="${PASSWORD}" classpath="${DRIVER}" onerror="continue"> 
+			drop table gruppen;		
+			drop table benutzer;
+			drop table wraps;
+			drop table zutaten;
+			drop table bestellungen;
+			drop table kategorien;
+					
+			</sql>
+			</target>
+		<target name="all" depends="clean, create, stammkunden anlegen, zutaten anlegen, wraps anlegen">
+		</target>
+	</project>

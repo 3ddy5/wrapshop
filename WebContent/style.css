@@ -1,0 +1,56 @@
+body {
+	width: 500px;
+	border: 1px solid;    
+	margin: 10px;
+	padding: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	background-color: #ccd2d3;
+	padding: 4px 4px 4px 4px;
+	border: 1px solid;
+}
+
+td {
+	padding: 0px 5px 0px 5px;
+}
+
+tr.odd {
+	background-color: #edf4f5; 
+}
+
+tr.even {
+	background-color: #dae0e1;
+}
+
+input[type=submit], input[type=button] {
+        font-size: 10px;
+        margin: 5px 0px 5px 0px;
+        width: 100%;
+        background-color: #eeeeee;
+        cursor: pointer;
+        border: 1px solid;
+}
+
+input[type=text] {
+        font-size: 11px;
+        padding-left: 1px;
+        width: 100%;
+        margin: 2px;
+        border: 1px solid;
+}
+
+.message {
+	color: red;
+	font-size: 10px;
+}
+
+.headerLeft {
+	float: left;
+}

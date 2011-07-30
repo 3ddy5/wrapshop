@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Anzeige aller Wraps</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</h:head>
+<h:body>
+<h:form>
+	<h:dataTable value="#{wrapHandler.wraps}" var="wrap"
+		rowClasses="odd,even" headerClass="header" footerClass="footer">
+		<f:facet name="header">Anzeige aller Wraps</f:facet>
+		<h:column>
+		<f:facet name="header"><h:outputText value="Zutat1"  
+			styleClass="headerLeft" />
+		</f:facet>
+			#{wrap.zutat1}
+			</h:column>
+			<h:column>
+				<f:facet name="header"><h:outputText value="Zutat2"  
+					styleClass="headerLeft" />
+				</f:facet>
+				#{wrap.zutat2}
+			</h:column>
+			<h:column>
+				<f:facet name="header"><h:outputText value="Zutat3"  
+					styleClass="headerLeft" />
+				</f:facet>
+				#{wrap.zutat3}
+			</h:column>
+			<h:column>
+				<f:facet name="header"><h:outputText value="Zutat4"  
+					styleClass="headerLeft" />
+				</f:facet>
+				#{wrap.zutat4}
+			</h:column>
+			<h:column>
+				<h:commandButton action="#{wrapHandler.aendern}" value="Ändern" />
+			</h:column>
+			<h:column>
+				<h:commandButton action="#{wrapHandler.loeschen}" value="Löschen" 
+					onclick="return confirm('Wollen Sie wirklich löschen?');" />
+			</h:column>
+		</h:dataTable>
+		<h:commandButton action="#{wrapHandler.neuanlage}" value="Neuanlage" 
+			style="width: 80px; margin: 10px 2px 2px 2px;" />
+		<h:commandButton action="#{wrapHandler.refresh}" 
+			value="Aktualisieren" style="width: 80px; margin: 10px 2px 2px 2px;" />
+			
+		<h:commandButton action="#{wrapHandler.exportPdf}" 
+			value="Drucken (PDF)" style="width: 80px; margin: 10px 2px 2px 2px;" />
+</h:form>
+</h:body>
+</html>
